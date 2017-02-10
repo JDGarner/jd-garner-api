@@ -1,6 +1,6 @@
 var options = {};
 var pgp = require('pg-promise')(options);
-var db = pgp('postgres://localhost:5432/diary');
+var db = pgp(process.env.DATABASE_URL);
 
 function getAllEntries(req, res, next) {
   db.any('SELECT * FROM entries')
