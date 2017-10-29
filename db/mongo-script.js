@@ -7,12 +7,10 @@ const MOVIES = require("./movies");
 async function insertDocuments() {
   try {
     const db = await MongoClient.connect("mongodb://localhost:27017/jdgarner");
-
-    await db.collection("books").drop();
+    db.dropDatabase();
+    
     await db.collection("books").insert(BOOKS);
-    await db.collection("work").drop();
     await db.collection("work").insert(WORK);
-    await db.collection("movies").drop();
     await db.collection("movies").insert(MOVIES);
 
     db.close();
