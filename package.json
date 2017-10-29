@@ -9,8 +9,6 @@
     "node": "7.4.0"
   },
   "dependencies": {
-    "express": "~4.14.1",
-    "morgan": "~1.7.0",
-    "pg-promise": "^5.5.6"
+    "express": "~4.14.1"
   }
 }
